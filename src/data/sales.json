@@ -1,28 +1,57 @@
 {
-  "dateRange": ["2023-01-01", "2023-12-31"],
-  "totalSalesUnits": 10000,
-  "totalSalesValue": 500000,
+  "dateRange": ["2024-01-01", "2024-12-31"],
+  "totalSalesUnits": 135000,
+  "totalSalesValue": 3250000,
   "topProducts": [
-    { "name": "Product 1", "sales": 1500 },
-    { "name": "Product 2", "sales": 1200 }
+    { "name": "Smartphone Y", "sales": 17000 },
+    { "name": "Laptop Ultra", "sales": 14000 },
+    { "name": "Headphones Max", "sales": 12000 },
+    { "name": "Smartwatch Z", "sales": 10000 },
+    { "name": "Tablet Pro", "sales": 9500 }
   ],
   "salesOverTime": [
-    { "date": "2023-01-01", "sales": 1000 },
-    { "date": "2023-01-02", "sales": 1200 }
+    { "date": "2024-01-01", "sales": 5500 },
+    { "date": "2024-02-01", "sales": 8000 },
+    { "date": "2024-03-01", "sales": 6500 },
+    { "date": "2024-04-01", "sales": 8500 },
+    { "date": "2024-05-01", "sales": 7500 },
+    { "date": "2024-06-01", "sales": 9500 },
+    { "date": "2024-07-01", "sales": 10000 },
+    { "date": "2024-08-01", "sales": 10500 },
+    { "date": "2024-09-01", "sales": 11000 },
+    { "date": "2024-10-01", "sales": 11500 },
+    { "date": "2024-11-01", "sales": 12000 },
+    { "date": "2024-12-01", "sales": 13000 }
   ],
   "salesByCategory": [
-    { "category": "Category 1", "sales": 3000 },
-    { "category": "Category 2", "sales": 2500 }
+    { "category": "Electronics", "sales": 1650000 },
+    { "category": "Accessories", "sales": 825000 },
+    { "category": "Wearables", "sales": 500000 },
+    { "category": "Software", "sales": 300000 }
   ],
   "profitsOverTime": [
-    { "date": "2023-01-01", "profit": 500 },
-    { "date": "2023-01-02", "profit": 700 }
+    { "date": "2024-01-01", "profit": 2200 },
+    { "date": "2024-02-01", "profit": 3200 },
+    { "date": "2024-03-01", "profit": 2700 },
+    { "date": "2024-04-01", "profit": 3700 },
+    { "date": "2024-05-01", "profit": 3200 },
+    { "date": "2024-06-01", "profit": 4200 },
+    { "date": "2024-07-01", "profit": 4700 },
+    { "date": "2024-08-01", "profit": 5200 },
+    { "date": "2024-09-01", "profit": 5700 },
+    { "date": "2024-10-01", "profit": 6200 },
+    { "date": "2024-11-01", "profit": 6700 },
+    { "date": "2024-12-01", "profit": 7500 }
   ],
   "insights": [
-    "Sales for Europe is the fastest growing",
-    "North America is the slowest growing"
+    "Sales for Electronics continue to show strong growth.",
+    "Accessories sales remain robust, especially in the second half of the year.",
+    "Wearables have maintained steady growth, with significant peaks during Q3 and Q4.",
+    "Software sales have seen a slight increase compared to the previous year."
   ],
   "recommendations": [
-    "Analyze the performance of various product categories across sales channels"
+    "Focus on launching new Electronics and Wearables products before the holiday season.",
+    "Increase promotional activities for Accessories during Q3 to capitalize on seasonal demand.",
+    "Explore partnerships and bundling opportunities for Software products to enhance sales."
   ]
 }
