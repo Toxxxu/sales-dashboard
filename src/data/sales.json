@@ -1,0 +1,28 @@
+{
+  "dateRange": ["2023-01-01", "2023-12-31"],
+  "totalSalesUnits": 10000,
+  "totalSalesValue": 500000,
+  "topProducts": [
+    { "name": "Product 1", "sales": 1500 },
+    { "name": "Product 2", "sales": 1200 }
+  ],
+  "salesOverTime": [
+    { "date": "2023-01-01", "sales": 1000 },
+    { "date": "2023-01-02", "sales": 1200 }
+  ],
+  "salesByCategory": [
+    { "category": "Category 1", "sales": 3000 },
+    { "category": "Category 2", "sales": 2500 }
+  ],
+  "profitsOverTime": [
+    { "date": "2023-01-01", "profit": 500 },
+    { "date": "2023-01-02", "profit": 700 }
+  ],
+  "insights": [
+    "Sales for Europe is the fastest growing",
+    "North America is the slowest growing"
+  ],
+  "recommendations": [
+    "Analyze the performance of various product categories across sales channels"
+  ]
+}
