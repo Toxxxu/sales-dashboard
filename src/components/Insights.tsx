@@ -15,13 +15,17 @@ export const Insights: React.FC<InsightProps> = ({
       <h3 className="font-semibold">Insights</h3>
       <ul className="mb-4">
         {insights.map((insight, index) => (
-          <li key={index}>{insight}</li>
+          <li key={index} className="mb-2">
+            - {insight}
+          </li>
         ))}
       </ul>
       <h3 className="font-semibold">Recommendations</h3>
       <ul>
-        {recommendations.map((recommendations, index) => (
-          <li key={index}>{recommendations}</li>
+        {recommendations.map((recommendation, index) => (
+          <li key={index} className="mb-2">
+            - {recommendation}
+          </li>
         ))}
       </ul>
     </div>
