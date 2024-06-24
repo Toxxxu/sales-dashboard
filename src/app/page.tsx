@@ -21,6 +21,8 @@ export default function Home() {
     },
   ]);
 
+  const [filteredData, setFilteredData] = useState(salesData);
+
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -34,7 +36,22 @@ export default function Home() {
           key: "selection",
         },
       ]);
+      filterSalesData(selection.startDate, selection.endDate);
     }
+  };
+
+  const filterSalesData = (startDate: Date, endDate: Date) => {
+    const filteredSales = {
+      ...salesData,
+      salesOverTime: salesData.salesOverTime.filter(
+        (sale) => new Date(sale.date) >= startDate && new Date(sale.date) <= endDate
+      ),
+      profitsOverTime: salesData.profitsOverTime.filter(
+        (profit) => new Date(profit.date) >= startDate && new Date(profit.date) <= endDate
+      ),
+    };
+
+    setFilteredData(filteredSales);
   };
 
   useEffect(() => {
@@ -66,38 +83,38 @@ export default function Home() {
         <div className="flex flex-row max-w-full gap-4 mb-4">
           <SummarySection
             title="Total Sales (Units)"
-            value={salesData.totalSalesUnits}
+            value={filteredData.totalSalesUnits}
             percentage={10}
           />
           <SummarySection
             title="Total Sales ($)"
-            value={salesData.totalSalesValue}
+            value={filteredData.totalSalesValue}
             percentage={15}
           />
         </div>
         <div className="mb-4">
-          <TopProducts products={salesData.topProducts} />
+          <TopProducts products={filteredData.topProducts} />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div className="flex flex-col gap-4 flex-start">
             <div className="flex-grow">
-              <SalesLineGraph data={salesData.salesOverTime} />
+              <SalesLineGraph data={filteredData.salesOverTime} />
             </div>
             <div className="flex-grow">
               <SalesAndProfitsChart
-                salesData={salesData.salesOverTime}
-                profitsData={salesData.profitsOverTime}
+                salesData={filteredData.salesOverTime}
+                profitsData={filteredData.profitsOverTime}
               />
             </div>
           </div>
           <div className="flex gap-4 flex-start">
-            <SalesByCategory data={salesData.salesByCategory} />
+            <SalesByCategory data={filteredData.salesByCategory} />
           </div>
         </div>
         <div>
           <Insights
-            insights={salesData.insights}
-            recommendations={salesData.recommendations}
+            insights={filteredData.insights}
+            recommendations={filteredData.recommendations}
           />
         </div>
       </div>
