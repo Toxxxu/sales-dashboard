@@ -7,7 +7,7 @@ interface TopProductsProps {
 
 export const TopProducts: React.FC<TopProductsProps> = ({ products }) => {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md text-black">
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md text-black dark:text-white w-full">
       <h2 className="text-lg font-semibold mb-4">Top 5 Selling Products</h2>
       <ul>
         {products.map((product, index) => (

@@ -23,7 +23,12 @@ export const SalesByCategory: React.FC<SalesByCategoryProps> = ({ data }) => {
         hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
       },
     ],
+    labels: data.map((item) => item.category),
   };
 
-  return <Pie data={chartData} />;
+  return (
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md w-full flex items-center justify-center">
+      <Pie data={chartData} />
+    </div>
+  );
 };

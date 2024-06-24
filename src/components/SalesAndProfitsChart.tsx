@@ -32,9 +32,6 @@ export const SalesAndProfitsChart: React.FC<SalesAndProfitsChartProps> = ({
   const options = {
     response: true,
     plugins: {
-      //   legend: {
-      //     position: "top",
-      //   },
       title: {
         display: true,
         text: "Sales and Profits Over Time",
@@ -62,5 +59,9 @@ export const SalesAndProfitsChart: React.FC<SalesAndProfitsChartProps> = ({
     ],
   };
 
-  return <Bar options={options} data={chartData} />;
+  return (
+    <div className="p-4 flex justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md w-full">
+      <Bar options={options} data={chartData} />
+    </div>
+  );
 };

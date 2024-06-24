@@ -10,7 +10,7 @@ export const Insights: React.FC<InsightProps> = ({
   recommendations,
 }) => {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md text-black">
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md text-black dark:text-white w-full">
       <h2 className="text-lg font-semibold mb-4">Insights & Recommendations</h2>
       <h3 className="font-semibold">Insights</h3>
       <ul className="mb-4">

@@ -46,58 +46,61 @@ export default function Home() {
   }, [isDarkMode]);
 
   return (
-    <div className={`container mx-auto p-4 ${isDarkMode ? "dark" : ""}`}>
+    <>
       <Header
         isDatePickerOpen={isDatePickerOpen}
         setIsDatePickerOpen={setIsDatePickerOpen}
         isDarkMode={isDarkMode}
         setIsDarkMode={setIsDarkMode}
       />
+      <div className={`container mx-auto p-4 ${isDarkMode ? "dark" : ""}`}>
+        {isDatePickerOpen && (
+          <div className="flex items-center justify-center mb-4">
+            <DateRangePickerComponent
+              range={range}
+              setRange={handleRangeChange}
+            />
+          </div>
+        )}
 
-      {isDatePickerOpen && (
-        <div className="mb-4">
-          <DateRangePickerComponent
-            range={range}
-            setRange={handleRangeChange}
+        <div className="flex flex-row max-w-full gap-4 mb-4">
+          <SummarySection
+            title="Total Sales (Units)"
+            value={salesData.totalSalesUnits}
+            percentage={10}
+          />
+          <SummarySection
+            title="Total Sales ($)"
+            value={salesData.totalSalesValue}
+            percentage={15}
           />
         </div>
-      )}
-
-      <div className="flex flex-row max-w-full gap-4 mb-4">
-        <SummarySection
-          title="Total Sales (Units)"
-          value={salesData.totalSalesUnits}
-          percentage={10}
-        />
-        <SummarySection
-          title="Total Sales ($)"
-          value={salesData.totalSalesValue}
-          percentage={15}
-        />
-      </div>
-      <div className="mb-4">
-        <TopProducts products={salesData.topProducts} />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div className="mb-4">
-          <SalesLineGraph data={salesData.salesOverTime} />
+          <TopProducts products={salesData.topProducts} />
         </div>
-        <div className="mb-4">
-          <SalesByCategory data={salesData.salesByCategory} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="flex flex-col gap-4 flex-start">
+            <div className="flex-grow">
+              <SalesLineGraph data={salesData.salesOverTime} />
+            </div>
+            <div className="flex-grow">
+              <SalesAndProfitsChart
+                salesData={salesData.salesOverTime}
+                profitsData={salesData.profitsOverTime}
+              />
+            </div>
+          </div>
+          <div className="flex gap-4 flex-start">
+            <SalesByCategory data={salesData.salesByCategory} />
+          </div>
         </div>
-        <div className="mb-4">
-          <SalesAndProfitsChart
-            salesData={salesData.salesOverTime}
-            profitsData={salesData.profitsOverTime}
+        <div>
+          <Insights
+            insights={salesData.insights}
+            recommendations={salesData.recommendations}
           />
         </div>
       </div>
-      <div className="mb-4">
-        <Insights
-          insights={salesData.insights}
-          recommendations={salesData.recommendations}
-        />
-      </div>
-    </div>
+    </>
   );
 }

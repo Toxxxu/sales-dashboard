@@ -14,7 +14,7 @@ export const Header: React.FC<HeaderProps> = ({
   setIsDarkMode,
 }) => {
   return (
-    <header className="flex justify-between items-center mb-4">
+    <header className="p-4 flex bg-white dark:bg-gray-800 shadow-md text-black dark:text-white justify-between items-center m-4">
       <div className="text-2xl font-bold">Sales Analytics</div>
       <div className="flex items-center gap-4">
         <button

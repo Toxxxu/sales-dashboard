@@ -30,9 +30,6 @@ export const SalesLineGraph: React.FC<SalesLineGraphProps> = ({ data }) => {
   const options = {
     responsive: true,
     plugins: {
-        // legend: {
-        //   position: "top",
-        // },
       title: {
         display: true,
         text: "Sales Over Time",
@@ -52,5 +49,9 @@ export const SalesLineGraph: React.FC<SalesLineGraphProps> = ({ data }) => {
     ],
   };
 
-  return <Line options={options} data={chartData} />;
+  return (
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md w-full">
+      <Line options={options} data={chartData} />
+    </div>
+  );
 };
