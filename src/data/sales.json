@@ -1,7 +1,13 @@
 {
   "dateRange": ["2024-01-01", "2024-12-31"],
-  "totalSalesUnits": 135000,
-  "totalSalesValue": 3250000,
+  "totalSalesUnits": {
+    "value": 135000,
+    "percentage": 10
+  },
+  "totalSalesValue": {
+    "value": 3250000,
+    "percentage": 15
+  },
   "topProducts": [
     { "name": "Smartphone Y", "sales": 17000 },
     { "name": "Laptop Ultra", "sales": 14000 },

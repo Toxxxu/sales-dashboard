@@ -44,10 +44,12 @@ export default function Home() {
     const filteredSales = {
       ...salesData,
       salesOverTime: salesData.salesOverTime.filter(
-        (sale) => new Date(sale.date) >= startDate && new Date(sale.date) <= endDate
+        (sale) =>
+          new Date(sale.date) >= startDate && new Date(sale.date) <= endDate
       ),
       profitsOverTime: salesData.profitsOverTime.filter(
-        (profit) => new Date(profit.date) >= startDate && new Date(profit.date) <= endDate
+        (profit) =>
+          new Date(profit.date) >= startDate && new Date(profit.date) <= endDate
       ),
     };
 
@@ -83,13 +85,13 @@ export default function Home() {
         <div className="flex flex-row max-w-full gap-4 mb-4">
           <SummarySection
             title="Total Sales (Units)"
-            value={filteredData.totalSalesUnits}
-            percentage={10}
+            value={filteredData.totalSalesUnits.value}
+            percentage={filteredData.totalSalesUnits.percentage}
           />
           <SummarySection
             title="Total Sales ($)"
-            value={filteredData.totalSalesValue}
-            percentage={15}
+            value={filteredData.totalSalesValue.value}
+            percentage={filteredData.totalSalesValue.percentage}
           />
         </div>
         <div className="mb-4">
