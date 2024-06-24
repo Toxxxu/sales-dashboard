@@ -7,11 +7,12 @@ import {
   Legend,
   ChartData,
 } from "chart.js";
+import { SaleByCategory } from "@/types";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface SalesByCategoryProps {
-  data: { category: string; sales: number }[];
+  data: SaleByCategory[];
 }
 
 export const SalesByCategory: React.FC<SalesByCategoryProps> = ({ data }) => {

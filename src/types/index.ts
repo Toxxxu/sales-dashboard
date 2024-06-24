@@ -3,14 +3,22 @@ export interface Product {
   sales: number;
 }
 
-export interface Sales {
-  dateRange: string[];
-  totalSalesUnites: number;
-  totalSalesValue: number;
-  topProducts: Product[];
-  salesOverTime: { date: string; sales: number }[];
-  salesByCategory: { category: string; sales: number }[];
-  profitsOvertTime: { date: string; profit: number }[];
-  insights: string[];
-  recommendations: string;
+export interface Sale {
+  date: string;
+  sales: number;
+}
+
+export interface Profit {
+  date: string;
+  profit: number;
+}
+
+export interface SaleByCategory {
+  category: string;
+  sales: number;
+}
+
+export interface SaleLineGraph {
+  date: string;
+  sales: number;
 }

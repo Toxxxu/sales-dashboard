@@ -10,6 +10,7 @@ import {
   Legend,
   ChartData,
 } from "chart.js";
+import { Profit, Sale } from "@/types";
 
 ChartJS.register(
   CategoryScale,
@@ -21,8 +22,8 @@ ChartJS.register(
 );
 
 interface SalesAndProfitsChartProps {
-  salesData: { date: string; sales: number }[];
-  profitsData: { date: string; profit: number }[];
+  salesData: Sale[];
+  profitsData: Profit[];
 }
 
 export const SalesAndProfitsChart: React.FC<SalesAndProfitsChartProps> = ({

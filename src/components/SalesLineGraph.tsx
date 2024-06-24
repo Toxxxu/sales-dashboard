@@ -11,6 +11,7 @@ import {
   ChartData,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { SaleLineGraph } from "@/types";
 
 ChartJS.register(
   CategoryScale,
@@ -23,7 +24,7 @@ ChartJS.register(
 );
 
 interface SalesLineGraphProps {
-  data: { date: string; sales: number }[];
+  data: SaleLineGraph[];
 }
 
 export const SalesLineGraph: React.FC<SalesLineGraphProps> = ({ data }) => {
